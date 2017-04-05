@@ -105,13 +105,13 @@ class Signup(webapp2.RequestHandler):
 
 
 		if not name:
-			e_name = 'That is not a valid name'
+			e_name = 'Please enter a valid name'
 		if not password:
-			e_pass = 'That is not a valid password'
+			e_pass = 'Please enter a valid password'
 		if not match_pass(user_pass, user_verify):
 			e_verify = 'The two passwords do not match'
 		if not email:
-			e_email = 'That is not a valid email'
+			e_email = 'Please enter a valid email'
 
 		if password and (not e_verify) and name and email:
 			self.redirect('/welcome?username=%s' % user_name)
